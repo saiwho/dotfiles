@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.aspell.conf: aspell/aspell.conf 
+    ~/.aspell.en.prepl: aspell/aspell.en.prepl
+    ~/.aspell.en.pws: aspell/aspell.en.pws
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
