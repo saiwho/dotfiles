@@ -1,0 +1,109 @@
+# Aliases Setup 
+
+###########################################################################################################################
+
+# ALIASES 
+
+# Common aliases and Color support
+# Enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+    alias diff='diff --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias open='xdg-open'
+    alias egrep='egrep --color=auto'
+else
+  alias open='xdg-open'
+  alias ls='ls --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias egrep='egrep --color=auto'
+  alias diff='diff --color=auto'
+fi
+
+# To 'cd' Avoid mistakes
+alias dc="cd" 
+
+# ls
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# bat - For cat, less
+alias bat-themes='bat --list-themes'
+command -v bat > /dev/null && alias cat='bat --pager=never' # Alias bat=cat
+command -v bat > /dev/null && alias less='bat' # Alias less=cat
+
+# Misc
+alias my-ip="curl ipinfo.io/ip 2> /dev/null"
+alias sb='subl'
+alias clock='watch -n 0.1 "date +"%H:%M:%S" | toilet -f bigmono9"' # -f future
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# SECRET ALIASES
+if [ -f ~/.secret-aliases ]; then
+    source ~/.secret-aliases
+fi
+
+# LOCAL ALIASES
+if [ -f ~/.local-aliases ]; then
+    source ~/.local-aliases
+fi
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# OS DEPENDENT ALIASES
+
+case "$(uname -s)" in
+
+   Darwin)
+     # echo 'Mac OS X'
+     ;;
+
+   Linux)
+     # echo 'Linux'
+     ;;
+
+   CYGWIN*|MINGW32*|MSYS*)
+     # echo 'MS Windows'
+     ;;
+
+   *)
+     # echo 'other OS'
+     ;;
+esac
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# SHELL DEPENDENT ALIASES (only zsh has global aliases)
+
+case $SHELL in
+*/zsh)
+   # assume Zsh
+   ;;
+*/bash)
+   # assume Bash
+   ;;
+*)
+   # assume something else
+   ;;
+esac
+
+###########################################################################################################################

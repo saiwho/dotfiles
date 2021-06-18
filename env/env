@@ -1,0 +1,113 @@
+# Environment Setup
+# Shell Agnostic. Should work both with bash and zsh
+
+###########################################################################################################################
+
+# PATH 
+
+function prepend_path() {
+  # Does the alias only if the aliased program is installed
+    if [ -d $1 ]; then
+        export PATH="$1:$PATH"
+    fi
+}
+
+function append_path() {
+  # Does the alias only if the aliased program is installed
+    if [ -d $1 ]; then
+        export PATH="$PATH:$1"
+    fi
+}
+
+prepend_path "/bin"
+prepend_path "/sbin"
+prepend_path "/usr/bin"
+prepend_path "/usr/local/bin"
+prepend_path "/usr/local/sbin"
+
+# prepend_path "$HOME/bin"           # Custom scripts
+# prepend_path "$HOME/.secbin"       # Secret custom scripts
+
+append_path "/snap/bin"
+append_path "$HOME/.fzf/bin"
+append_path "usr/local/games"
+append_path "/usr/games"
+append_path "/usr/local/games"
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# PYTHON
+
+# virtualenv and virtualenvwrapper
+if [-f "$HOME/.PyVirtualEnvs"]; then
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    WORKON_HOME=$HOME/.PyVirtualEnvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# COLORS 
+
+# CLI Colors
+export CLICOLOR=1
+export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+# export CLICOLOR=1
+# export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# GCC Warnings and Errors Colors
+# export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# Man Pages Colors
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# OS specific Environment
+
+case "$(uname -s)" in
+
+   Darwin)
+     # echo 'Mac OS X'
+     ;;
+
+   Linux)
+     # echo 'Linux'
+     ;;
+
+   CYGWIN*|MINGW32*|MSYS*)
+     # echo 'MS Windows'
+     ;;
+
+   *)
+     # echo 'other OS'
+     ;;
+esac
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
+# LOCAL ENV
+
+if [ -f ~/.local-env ]; then
+    source ~/.local-env
+fi
+
+###########################################################################################################################

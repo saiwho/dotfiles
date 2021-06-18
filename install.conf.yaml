@@ -15,6 +15,10 @@
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
     ~/.bash_logout: bash/bash_logout
+    
+    ~/.env: env/env
+    ~/.aliases: env/aliases
+    ~/.profile: env/profile
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
