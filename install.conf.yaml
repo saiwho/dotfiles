@@ -6,19 +6,17 @@
 - clean: ['~']
 
 - link:
-    ~/.aspell.conf: aspell/aspell.conf 
-    ~/.aspell.en.prepl: aspell/aspell.en.prepl
-    ~/.aspell.en.pws: aspell/aspell.en.pws
-
-    ~/.bash_login: bash/bash_login
-    ~/.bash_profile: bash/bash_profile
-    ~/.bashrc: bash/bashrc
-    ~/.inputrc: bash/inputrc
-    ~/.bash_logout: bash/bash_logout
+    ~/:
+      glob: true
+      path: aspell/*
+      path: bash/*
+      path: env/*
+      prefix: '.'
     
-    ~/.env: env/env
-    ~/.aliases: env/aliases
-    ~/.profile: env/profile
-
+    ~/.config/fish:
+      glob: true
+      create: true
+      path: fish/*
+    
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
