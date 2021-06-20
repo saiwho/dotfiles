@@ -11,6 +11,7 @@
       path: aspell/*
       path: bash/*
       path: env/*
+      path: git/*
       prefix: '.'
     
     ~/.config/fish:
