@@ -12,6 +12,7 @@
       path: bash/*
       path: env/*
       path: git/*
+      path: misc-cli/*
       prefix: '.'
     
     ~/.config/fish:
@@ -19,5 +20,9 @@
       create: true
       path: fish/*
     
+    ~/.config/bat/config:
+      create: true
+      path: misc-cli/bat/config
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
