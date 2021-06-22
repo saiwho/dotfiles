@@ -28,6 +28,11 @@
       glob: true
       create: true
       path: scripts/bin/*
+    
+    ~/.config/kitty/kitty.conf:
+      glob: true
+      create: true
+      path: terminal/kitty/kitty.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
