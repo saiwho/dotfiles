@@ -42,7 +42,7 @@ append_path "/usr/local/games"
 # PYTHON
 
 # virtualenv and virtualenvwrapper
-if [ -f "$HOME/.PyVirtualEnvs" ]; then
+if [ -d "$HOME/.PyVirtualEnvs" ]; then
     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     WORKON_HOME=$HOME/.PyVirtualEnvs
     source /usr/local/bin/virtualenvwrapper.sh
