@@ -24,5 +24,10 @@
       create: true
       path: misc-cli/bat/config
 
+    ~/.bin/*:
+      glob: true
+      create: true
+      path: scripts/bin/*
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
