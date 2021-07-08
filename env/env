@@ -42,25 +42,25 @@ append_path "/usr/local/games"
 # PYTHON
 
 # virtualenv and virtualenvwrapper
-#if [ -d "$HOME/.PyVirtualEnvs" ]; then
-#    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-#    WORKON_HOME=$HOME/.PyVirtualEnvs
-#    source /usr/local/bin/virtualenvwrapper.sh
-#fi
+if [ -d "$HOME/.PyVirtualEnvs" ]; then
+    VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+    WORKON_HOME=$HOME/.PyVirtualEnvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Pyenv
-if [ -d "$HOME/.pyenv" ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
-
-    if command -v pyenv > /dev/null; then
-        eval "$(pyenv init -)";
-    fi
-    if command -v pyenv-virtualenv-init > /dev/null; then
-        eval "$(pyenv virtualenv-init -)";
-    fi
-   # export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-    prepend_path "$PYENV_ROOT/bin"     # PYENV binaries from
-fi
+#if [ -d "$HOME/.pyenv" ]; then
+#    export PYENV_ROOT="$HOME/.pyenv"
+#
+#    if command -v pyenv > /dev/null; then
+#        eval "$(pyenv init -)";
+#    fi
+#    if command -v pyenv-virtualenv-init > /dev/null; then
+#        eval "$(pyenv virtualenv-init -)";
+#    fi
+#   # export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+#    prepend_path "$PYENV_ROOT/bin"     # PYENV binaries from
+#fi
 
 ###########################################################################################################################
 
