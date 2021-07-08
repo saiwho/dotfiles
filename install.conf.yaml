@@ -13,6 +13,7 @@
       path: env/*
       path: git/*
       path: misc-cli/*
+      path: tmux/*
       prefix: '.'
     
     ~/.config/fish:
