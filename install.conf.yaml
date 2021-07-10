@@ -14,6 +14,7 @@
       path: git/*
       path: misc-cli/*
       path: tmux/*
+      path: vim/*
       prefix: '.'
     
     ~/.config/fish:
@@ -34,6 +35,6 @@
       glob: true
       create: true
       path: terminal/kitty/kitty.conf
-
+    
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
