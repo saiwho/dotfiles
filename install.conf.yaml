@@ -15,6 +15,7 @@
       path: misc-cli/*
       path: tmux/*
       path: vim/*
+      path: zsh/zprezto/*
       prefix: '.'
     
     ~/.config/fish:
@@ -36,5 +37,8 @@
       create: true
       path: terminal/kitty/kitty.conf
     
+    ~/.p10k.zsh:
+      path: zsh/p10k.zsh
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
