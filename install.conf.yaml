@@ -6,39 +6,76 @@
 - clean: ['~']
 
 - link:
-    ~/:
-      glob: true
-      path: aspell/*
-      path: bash/*
-      path: env/*
-      path: git/*
-      path: misc-cli/*
-      path: tmux/*
-      path: vim/*
-      path: zsh/zprezto/*
-      prefix: '.'
+    # aspell
+    ~/.aspell.conf: aspell/aspell.conf
+    ~/.aspell.en.prepl: aspell/aspell.en.prepl
+    ~/.aspell.en.pws: aspell/aspell.en.pws 
     
+    # bash
+    ~/.bash_login: bash/bash_login
+    ~/.bash_logout: bash/bash_logout
+    ~/.bash_profile: bash/bash_profile
+    ~/.bashrc: bash/bashrc
+    ~/.inputrc: bash/inputrc
+    
+    # env
+    ~/.aliases: env/aliases
+    ~/.env: env/env
+    ~/.profile: env/profile
+    
+    # git
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore_global: git/gitignore_global
+
+    # misc-cli
+    ~/.config/bat/config:
+      create: true
+      path: misc-cli/bat/config
+    ~/.curlrc: misc-cli/curlrc
+    ~/.latexmkrc: misc-cli/latexmkrc
+    ~/.nanorc: misc-cli/nanorc
+    ~/.ripgreprc: misc-cli/ripgreprc
+
+    # tmux
+    ~/.screenrc: tmux/screenrc
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux-remote.conf: tmux/tmux-remote.conf
+
+    # vim
+    ~/.vim:
+      create: true
+      path: vim/vim
+    ~/.vimrc: vim/vimrc
+
+    # zsh
+    ~/:
+      path: zsh/zprezto/*
+      glob: true
+      prefix: '.'
+      
+    # powerlevel10k
+    ~/.p10k.zsh:
+      path: zsh/p10k.zsh
+
+    # fish shell
     ~/.config/fish:
       glob: true
       create: true
       path: fish/*
-    
-    ~/.config/bat/config:
-      create: true
-      path: misc-cli/bat/config
 
+    # extra useful scripts
     ~/.bin/*:
       glob: true
       create: true
       path: scripts/bin/*
     
+    # kitty terminal
     ~/.config/kitty/kitty.conf:
       glob: true
       create: true
       path: terminal/kitty/kitty.conf
     
-    ~/.p10k.zsh:
-      path: zsh/p10k.zsh
+    
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
