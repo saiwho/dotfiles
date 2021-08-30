@@ -52,7 +52,7 @@
       path: zsh/zprezto/*
       glob: true
       prefix: '.'
-      
+
     # powerlevel10k
     ~/.p10k.zsh:
       path: zsh/p10k.zsh
@@ -75,7 +75,5 @@
       create: true
       path: terminal/kitty/kitty.conf
     
-    
-
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
