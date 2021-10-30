@@ -12,7 +12,7 @@ function pull_repo() {
 
 
 # BAT
-sudo apt install bat
+sudo apt install -y bat
 
 # FASD
 if [[ ! -f $HOME/bin/fasd ]]; then
@@ -38,6 +38,7 @@ fi
 
 
 # TMUX
+sudo apt install -y tmux
 if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
     mkdir -p $HOME/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
@@ -46,6 +47,7 @@ pull_repo $HOME/.tmux/plugins/tpm
 
 
 # ZSH
+sudo apt install -y zsh
 if [[ ! -d $HOME/.zprezto ]]; then
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 fi
