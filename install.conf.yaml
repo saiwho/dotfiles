@@ -64,7 +64,7 @@
       path: fish/*
 
     # extra useful scripts
-    ~/.bin/*:
+    ~/.bin/scripts/:
       glob: true
       create: true
       path: scripts/bin/*

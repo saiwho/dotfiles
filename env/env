@@ -39,6 +39,15 @@ append_path "/usr/local/games"
 
 ###########################################################################################################################
 
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+###########################################################################################################################
+
+
+###########################################################################################################################
+
 # PYTHON
 
 # virtualenv and virtualenvwrapper
@@ -48,7 +57,7 @@ if [ -d "$HOME/.PyVirtualEnvs" ]; then
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
-## Pyenv
+# Pyenv
 #if [ -d "$HOME/.pyenv" ]; then
 #   export PYENV_ROOT="$HOME/.pyenv"
 #
