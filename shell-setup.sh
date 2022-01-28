@@ -3,7 +3,7 @@ set -x
 set -e
 
 
-# Script Functions 
+# Script Functions
 function pull_repo() {
     cd $1
     git pull
@@ -13,6 +13,7 @@ function pull_repo() {
 
 # BAT
 sudo apt install -y bat
+
 
 # FASD
 if [[ ! -f $HOME/bin/fasd ]]; then
@@ -43,15 +44,14 @@ if [[ ! -d $HOME/.tmux/plugins/tpm ]]; then
     mkdir -p $HOME/.tmux/plugins
     git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 fi
-pull_repo $HOME/.tmux/plugins/tpm
 
 
 # ZSH
 sudo apt install -y zsh
 if [[ ! -d $HOME/.zprezto ]]; then
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    cd $HOME/.zprezto
+    git pull
+    git submodule update --init --recursive
+    cd -
 fi
-cd $HOME/.zprezto
-git pull
-git submodule update --init --recursive
-cd - 
