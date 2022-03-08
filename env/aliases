@@ -34,9 +34,9 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # bat - For cat, less
-alias bat-themes='bat --list-themes'
-command -v bat > /dev/null && alias cat='bat --pager=never' # Alias bat=cat
-command -v bat > /dev/null && alias less='bat' # Alias less=cat
+alias bat-themes='batcat --list-themes'
+command -v batcat > /dev/null && alias cat='batcat --pager=never' # Alias bat=cat
+command -v batcat > /dev/null && alias less='batcat' # Alias less=cat
 
 # Misc
 alias my-ip="curl ipinfo.io/ip 2> /dev/null"
