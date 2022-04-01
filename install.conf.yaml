@@ -25,7 +25,7 @@
     
     # git
     ~/.gitconfig: git/gitconfig
-    ~/.gitconfig-work: git/gitconfig-work
+    ~/.gitconfig-kai: git/gitconfig-kai
     ~/.gitignore_global: git/gitignore_global
 
     # misc-cli
