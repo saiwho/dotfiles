@@ -1,0 +1,6 @@
+# Default github account: oanhnn
+Host me.github.com
+   HostName github.com
+   IdentityFile ~/.ssh/github-me
+   IdentitiesOnly yes
+   

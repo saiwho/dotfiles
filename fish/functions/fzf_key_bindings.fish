@@ -1,0 +1,1 @@
+/home/tempest/.fzf/shell/key-bindings.fish

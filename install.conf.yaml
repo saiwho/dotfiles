@@ -27,6 +27,9 @@
     ~/.gitconfig: git/gitconfig
     ~/.gitconfig-kai: git/gitconfig-kai
     ~/.gitignore_global: git/gitignore_global
+    
+    # ssh
+    ~/.ssh/config: ssh/config
 
     # misc-cli
     ~/.config/bat/config:
