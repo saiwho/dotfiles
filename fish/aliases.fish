@@ -5,18 +5,18 @@
 # Common aliases and Color support
 # Enable color support of ls and also add handy aliases
 if test -x /usr/bin/dircolors 
-    test -x ~/.dircolors && eval "dircolors -b ~/.dircolors" 
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-    alias diff='diff --color=auto'
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias open='xdg-open'
-    alias egrep='egrep --color=auto'
+  test -x ~/.dircolors && eval "dircolors -b ~/.dircolors" 
+  #alias ls='ls --color=auto'
+  alias dir='dir --color=auto'
+  alias vdir='vdir --color=auto'
+  alias diff='diff --color=auto'
+  alias grep='grep --color=auto'
+  alias fgrep='fgrep --color=auto'
+  alias open='xdg-open'
+  alias egrep='egrep --color=auto'
 else 
   alias open='xdg-open'
-  alias ls='ls --color=auto'
+  #alias ls='ls --color=auto'
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
@@ -26,10 +26,15 @@ end
 # To 'cd' Avoid mistakes
 alias dc="cd" 
 
-# ls
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+# exa/ls
+if command -s exa > /dev/null
+  alias ls='exa'
+  alias sl='exa'
+else
+  alias ll='ls -alF'
+  alias la='ls -A'
+  alias l='ls -CF'
+end
 
 # bat - For cat, less
 alias bat-themes='batcat --list-themes'

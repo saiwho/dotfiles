@@ -9,4 +9,5 @@ source ~/.config/fish/aliases.fish
 # ENV
 source ~/.config/fish/env.fish
 
-# Pure theme
+# STARSHIP PROMPT
+starship init fish | source
