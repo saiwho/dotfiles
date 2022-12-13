@@ -1,0 +1,17 @@
+# Default github account: saiwho
+Host me.github.com
+   HostName github.com
+   IdentityFile ~/.ssh/github-me
+   IdentitiesOnly yes
+
+# Work github account: saipjkai
+Host work.github.com
+   HostName github.com
+   IdentityFile ~/.ssh/github-work
+   IdentitiesOnly yes
+
+# Work bitbucket account: saipjkaibb 
+Host work.bitbucket.org
+   HostName bitbucket.org
+   IdentityFile ~/.ssh/bitbucket-work
+   IdentitiesOnly yes
