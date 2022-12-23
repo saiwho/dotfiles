@@ -5,13 +5,26 @@
 - clean: ['~']
 
 - link:
-    ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
-    ~/.vimrc: vimrc
+    # bash
+    ~/.bash_profile: bash/bash_profile
+    ~/.bashrc: bash/bashrc
+    ~/.bash_prompt: bash/bash_prompt
+    ~/.bash_env: bash/bash_env
+    ~/.bash_aliases: bash/bash_aliases
+    ~/.bash_logout: bash/bash_logout
+
+    # ssh
+    ~/.ssh/config: ssh/config
+
+    # git
+    ~/.gitconfig: git/gitconfig
+    ~/.gitconfig-me: git/gitconfig-me 
+    ~/.gitconfig-kai-github: git/gitconfig-kai-github
+    ~/.gitconfig-kai-bitbucket: git/gitconfig-kai-bitbucket
+    ~/.gitignore_global: git/gitignore_global
 
 - create:
-    - ~/downloads
-    - ~/.vim/undo-history
+    - ~/.ssh
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
